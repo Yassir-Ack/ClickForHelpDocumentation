@@ -28,7 +28,7 @@ Just read the Doc and chilling!
 
 ## Link
 
-<`clickforhelp.netlify.app`>
+`<clickforhelp.netlify.app>`
 
 ## Licence & Copyright
 
