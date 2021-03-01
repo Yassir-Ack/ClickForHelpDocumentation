@@ -1,22 +1,24 @@
-# Click For Help Documentation
+# Click For Help Script
+
 **Version 1.5**
 
-This project was created with Javascript Pure Code & html2canvas & SMTP Protocol.
+This documentation was created with Javascript Pure Code and html & css.
 
-## About Project
+## About Documentation
 
 **I- Descripton**
 
-This Project is a script that makes you take a screenshot of your bug and send it with a description of the error to a specific mail, all these things just in one click on [ click for help button ].
+In this documentation we gonna learn what is ClickForHelp Support and why should we use it, also the structure of script...
+Just read the Doc and chilling!
 
-You can configure all params(Email, Receiver, Description, Subject) in setting file.
+**II- Structure of Documentation**
 
-**II- Structure of script**
-
-1- Create Button with DOM API.
-2- load data from setting file. 
-3- take a ScreenShot.
-4- send data to a specific Email.
+1- Get Started.
+2- Why click for help ? 
+3- Structure of script.
+4- Installation.
+5- Keybindings.
+6- Best practices.
 
 ## Contributors
 
@@ -24,11 +26,11 @@ You can configure all params(Email, Receiver, Description, Subject) in setting f
 
 - AutoHall Company <www.AutoHall.ma>
 
-## CDN
+## Link
 
-`https://cdn.jsdelivr.net/gh/Yassir-Ack/ClickForHelp/index.js`
+`clickforhelp.netlify.app`
 
 ## Licence & Copyright
 
-© Achchak Yassir, FullStack Web Developer.
+© Achchak Yassir, FullStack Web Developer at AUTO HALL.
 
