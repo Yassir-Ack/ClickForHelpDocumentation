@@ -1,0 +1,239 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Click for help Documentation - a code documentation page template</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="scribbler-global.css">
+    <link rel="stylesheet" href="scribbler-doc.css">
+    <link rel="author" href="humans.txt">
+  </head>
+  <body>
+    <div class="doc__bg"></div>
+    <nav class="header">
+      <h1 class="logo">Cfh <span class="logo__thin">Doc</span></h1>
+      <ul class="menu">
+        <div class="menu__item toggle"><span></span></div>
+        <li class="menu__item"><a href="https://github.com/Yassir-Ack/ClickForHelp" target="_blank" class="link link--dark"><i class="fa fa-github"></i> Github</a></li>
+        <li class="menu__item"><a href="index.html" class="link link--dark"><i class="fa fa-home"></i> Home</a></li>
+      </ul>
+    </nav>
+    <div class="wrapper">
+      <aside class="doc__nav">
+        <ul>
+          <li class="js-btn selected">Get Started</li>
+          <li class="js-btn">Why click for help ?</li>
+          <li class="js-btn">Structure of script</li>
+          <!-- <li class="js-btn">Configuration</li> -->
+          <li class="js-btn">Installation</li>
+          <li class="js-btn">Keybindings</li>
+          <li class="js-btn">Best practices</li>
+          <!-- <li class="js-btn">Conclusion</li> -->
+        </ul>
+      </aside>
+      <article class="doc__content">
+        <section class="js-section">
+          <h3 class="section__title">Get Started</h3>
+          <p>In this documentation we gonna learn what is ClickForHelp Support and why should we use it, also how to configure settings, 
+             plus structure of script with some screenshot to understand it well. <br>
+             Just read the Doc and chilling!</p>
+            </section>
+        <section class="js-section">
+          <h3 class="section__title">Why click for help ?</h3>
+          <p>First of all let's started with the problematic, an application that lacking of the support side or even if has a one, when the app breakdown
+             automatically support side brokendown... That is not the problem, the problem's how can the user share with developer
+             the problem that he got into, i mean how can a user share the specific error that he receive with description and in the other side the developer know who send the error and kind of the error ? 
+             <br> <br>
+             So click for help support is a simple tool come with a solution that makes the user never touch any device before, with just one click of the cfh button,
+             you can share the  error as a screenshot picture with some description if he wants to describe the error, all of these things in a short time,
+             you can also use it in case that a user don't undrestand how the system works and then he communicate with the developer to solve the problem.
+             <br> <br>
+             So the concept of <span class="cfh">cfh</span> is to save time by triggering <span class="cfh">cfh button</span> in the bug event which is
+             like support and which facilitates communication between a user and a developer.
+             <br> <br>
+             Let's not talk too much in abstraction and starting learning how script works and how can we work with.
+          </p>
+        </section>
+        <section class="js-section">
+          <h3 class="section__title">Structure of script</h3>
+
+          <h4 class="section__title">I- Requirements CDN.</h4>
+          <img class="screenshot__code" src="./Assets/images/code cdn requirements.png" alt="Requirements CDN screenshoot code">
+          <br><br>
+          <p>In early versions i was just using  APIs browser to get a screenshot of current tab and put him in canvas and convert it to image based 64 and the rest's pure code javascript but he was look too long and ugly and after that i thought to use a exsting libary which did same work, and i found html2canvas
+            if you wanna learn about it here is the link  <a href="https://html2canvas.hertzen.com/" target="_blank" class="link link--dark terminote">html2canvas.hertzen.com</a>
+            <br><br>
+            The same thing with Sweet Alert is a way to customize responsive alerts in your websites. It allows you to change from a standard JavaScript button.
+            if you wanna learn about it here is the link <a href="https://sweetalert.js.org/" target="_blank" class="link link--dark terminote">sweetalert.js.org/</a>
+            <br><br>
+            And finally SMTP Protocol to send the mail.
+          </p>
+
+          <h4 class="section__title">II- Create Button with DOM API.</h4>
+          <img class="screenshot__code" src="./Assets/images/code DOM API.png" alt="Requirements CDN screenshoot code">
+          <br><br>
+          <p>As you see i create a button with basic style using Document object model browser API.
+             You can remplace with any button you want <!--like this one &nbsp;<img class="image__example" src="./Assets/images/button example.png">&nbsp; --> <span class="link--light">just you must should keeping Id name</span> <span class="terminote">screenshotButton</span> and a part of style which makes the button located directly in the bottom right of the page. <br>Here is the style code:</p>
+             
+             <img src="./Assets/images/code cfh button position.png" class="screenshot__code">
+          
+          <h4 class="section__title">III- Load data from setting file.</h4>
+          <img class="screenshot__code" src="./Assets/images/code Get Data From Json File .png" alt="Requirements CDN screenshoot code">
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                $ click for help  ——setting
+                  {
+                    “Username” : “click for help support”,
+                    “Password” : *****************,
+                    “To” : “user.receiver@email.com”,
+                    “From” : “support.clickforhelp@email.com”,
+                    “Subject” : “Click for help support”,
+                    “Description” : “Hello i send to you this message just for testing the smtp protocol thank you.”
+                  }
+              </code>
+            </pre>
+            </div>
+          <br><br>
+          <p>I used Fetch API [<span style="color: var(--accent-color-dark);"> promise-based JavaScript API for making asynchronous HTTP requests in the browser similar to XMLHttpRequest (XHR) </span>] to load the data from setting file and this data i use it to handle SMTP protocol the file has the username and email, receiver and content of message i mean the description and after load data... I use it in the sendMail function (we gonna see how it's work ...)</p>
+          <p>And There is another way to handle SMTP protocol without using setting file, by implement required attribute inside script tag, and make sure that you put cfh value in id attribute on script tag :</p>
+          <br>
+          <img class="screenshot__code" src="./Assets/images/code set params from script not file.png" alt="Requirements CDN screenshoot code">
+          <br><br>
+          <p>As you see here we used destructuring object to get params from cfh script.</p>
+          <img class="screenshot__code" src="./Assets/images/code get params from script not file.png" alt="Requirements CDN screenshoot code">
+          <br><br>
+          
+          <h4 class="section__title">IV- Take a ScreenShot.</h4>
+          <img class="screenshot__code" src="./Assets/images/code Screenshot Side.png" alt="Requirements CDN screenshoot code">
+          <br><br>
+          <p>takeScreenshot is an asynchronous function that receive two arguments(user, description) which coming from sweetAlert response (pop-up).</p>
+          <p>We go through three basic steps : </p>
+          <ul>
+            <li>Hide and show the cfh-button.</li>
+            <li>Take the screenshot of web page and stock it in global variable (screenshotImageBase64) </li>
+            <li>Read data from setting file and send the mail</li>
+          </ul>
+
+          <h4 class="section__title">V- Send data to a specific Email.</h4>
+          <p>In sendMail function we handle smtp protocol by setting file or script attribute as you see in screenshots of code.</p>
+          <p>And then... after passing the mail and screenshot taking process with success we show a success message box !</p>
+          <img class="screenshot__code" src="./Assets/images/code Send Mail .png" alt="Requirements CDN screenshoot code">
+          <img class="screenshot__code" src="./Assets/images/code Send Mail By Setting File.png" alt="Requirements CDN screenshoot code">
+          <br><br>
+
+          
+          <h4 class="section__title">VI- Set username and describe the error (optional)</h4>
+          <img class="screenshot__code" src="./Assets/images/code Screenshot button on click event.png" alt="Requirements CDN screenshoot code">
+          <br><br>
+          <p>And finally in cfh-button onclick  event, we call takeScreenshot function after getting username and description by swwetAlert, and then... if the user doesn't print here name we display a warning message box ! </p>
+          
+        </section>
+      <!-- <section class="js-section">
+          <h3 class="section__title">Configuration</h3>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                $ click for help  ——setting
+                  {
+                    “Username” : “click for help support”,
+                    “Password” : *****************,
+                    “To” : “user.receiver@email.com”,
+                    “From” : “support.clickforhelp@email.com”,
+                    “Subject” : “Click for help support”,
+                    “Description” : “Hello i send to you this message just for testing the smtp protocol thank you.”
+                  }
+              </code>
+            </pre>
+          </div>
+        </section> -->
+        <section class="js-section">
+          <h3 class="section__title">Installation</h3>
+          <p>After download the script or calling the cdn:</p>
+          <p>Put the script in the head body tag:</p>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                &lt;script src="cfh.js" <span class="cfh">defer</span>&gt;&lt;/script&gt;
+                <br>OR<br>
+                &lt;script <span class="terminote">id="cfh"</span> src="cfh.js" <span class="cfh">defer</span>
+                        receiver="receiver@email.com" 
+                        email="support.clickforhelp@gmail.com" password="*************"&gt;
+                &lt;/script&gt;
+              </code>
+            </pre>
+          </div>
+          <p>Or put it after the body tag:</p>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                <span class="cfh"> &lt;/body&gt;</span>
+                &lt;script src="cfh.js" &gt;&lt;/script&gt;
+                <br>OR<br>
+                <span class="cfh"> &lt;/body&gt; </span>
+                &lt;script <span class="terminote">id="cfh"</span> src="cfh.js"
+                        receiver="receiver@email.com" 
+                        email="support.clickforhelp@gmail.com" password="*************"&gt;
+                &lt;/script&gt;
+              </code>
+            </pre>
+          </div>
+
+          <!--<table id="customers">
+            <tr>
+              <th>Options</th>
+              <th>Value</th>
+              <th>Default</th>
+            </tr>
+            <tr>
+              <td>encryption</td>
+              <td>encrypt all notes before saving. If turned on, it requires password to open the file.</td>
+              <td>false</td>
+            </tr>
+            <tr>
+              <td>highlighting</td>
+              <td>Show syntax highlight on markdown text.</td>
+              <td>true</td>
+            </tr>
+            <tr>
+              <td>prettyTable</td>
+              <td>Render table with Scribbler’s pretty table style.</td>
+              <td>true</td>
+            </tr>
+          </table>
+          <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
+          <hr /> -->
+
+          
+        </section>
+        <section class="js-section">
+          <h3 class="section__title">Keybindings</h3>
+
+          
+          <ul class="keybinding__detail">
+            <h4 class="keybinding__title">Actions Keybindings</h4>
+            <li>Show or hide click for help button <span class="keybinding__label">Ctrl+Alt+HELP</span></li>
+            <br>
+            <li><span class="keybinding__label">We gonna see another keybindings in next versions Comming soon!</span></li>  
+          </ul>
+
+        </section>
+        <section class="js-section">
+          <h3 class="section__title">Best practices</h3>
+          <p>Lorem ipsum dolor sit amet, scripta tibique indoctum sit ei, mel inani aeterno ad. Facer oratio ex per. At eam movet verear, in sea brute patrioque disputando, usu nonumes torquatos an. Ex his quaerendum intellegebat, ut vel homero accusam. Eum at debet tibique, in vocibus temporibus adversarium sed. Porro verear eu vix, ne usu tation vituperata.</p>
+          <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
+          <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
+          <hr />
+        </section>
+      </article>
+    </div>
+
+    <footer class="footer">Click for help is a free Support Script created by <span class="link--light">ACH-CHAK Yassir</span> FullStack web developer at <span class="terminote">AUTO HALL</span><!--<span class="email"> ayasseachchak@gmail.com</span>-->.</footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="scribbler.js"></script>
+  </body>
+</html>

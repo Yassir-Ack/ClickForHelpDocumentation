@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Click for help support - a documentation  codding landing page</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
+      <link rel="stylesheet" href="scribbler-global.css">
+      <link rel="stylesheet" href="scribbler-landing.css">
+      <link rel="author" href="humans.txt">
+  </head>
+  <body>
+    <nav>
+      <div class="logo"></div>
+      <ul class="menu">
+        <div class="menu__item toggle"><span></span></div>
+        <li class="menu__item"><a href="doc.html" class="link link--dark"><i class="fa fa-book"></i> Documentation</a></li>
+        <li class="menu__item"><a href="https://github.com/Yassir-Ack/ClickForHelp" target="_blank" class="link link--dark"><i class="fa fa-github"></i> Github</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <h1 class="hero__title">Click for help<span class="cfh"> cfh</span></h1>
+      <p class="hero__description">Let's talk about click for help. Take the notes in terminal <span class="terminote">terminote</span></p>
+    </div>
+    <div class="hero__terminal">
+      <pre>
+        <!-- Place your demo code here -->
+        <code class="shell-session demo">terminote ~ $ </code>
+      </pre>
+    </div>
+    <div class="wrapper">
+      <div class="installation">
+        <h3 class="section__title">Installation</h3>
+        <div class="tab__container">
+          <ul class="tab__menu">
+            <li class="tab active" data-tab="npm">npm</li>
+            <li class="tab" data-tab="yarn">yarn</li>
+            <li class="tab" data-tab="cdn">cdn</li>
+          </ul>
+          <pre class="nohighlight code">
+            <code class="tab__pane active npm">$  npm install cfh</code>
+            <code class="tab__pane yarn">$  yarn add cfh</code>
+            <code class="tab__pane cdn">$  https://clickforhelp.js.org</code>
+          </pre>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature__item">
+          <h3 class="section__title">Fast & Light</h3>
+          <p>Pure & optimized javascript file using ES6, well-structured! Readable code with comments. Less than one hundred line.</p>
+        </div>
+        <div class="feature__item">
+          <h3 class="section__title">Easy to Use</h3>
+          <p>Just put the script or CDN after body tag and that's all. You get it.</p>
+        </div>
+        <div class="feature__item">
+          <h3 class="section__title">Open Source</h3>
+          <p>Licened under MIT and hosted on GitHub.</p>
+        </div>
+        <div class="feature__item">
+          <h3 class="section__title">Configuration</h3>
+          <p>Maintain all your settings in a single <span class="code code--inline">setting.json</span> file. Never need to redo the setting every single time jotting down a note.</p>
+        </div>
+        <div class="feature__item">
+          <h3 class="section__title">Two Ways to Use</h3>
+          <p>You can use it with <span class="code code--inline">setting.json</span> file to configure your params, or just put your params as attribute inside cfh script! </p>
+        </div>
+         <div class="feature__item">
+          <h3 class="section__title">Secure</h3>
+          <p>Configure your params locally. No one can get to your secrets! </p>
+        </div>
+      </div>
+      <div class="keybinding">
+        <ul class="keybinding__detail">
+          <h3 class="keybinding__title">Actions Keybindings</h3>
+          <li>Show or hide click for help button <span class="keybinding__label">Ctrl+Alt+HELP</span></li>
+          <br>
+          <li><span class="keybinding__label">We gonna see another keybindings in next versions Comming soon!</span></li>
+        </ul>
+        <ul class="keybinding__detail">
+          <h3 class="keybinding__title">Markdown Keybindings</h3>
+          <li><span class="keybinding__label">Ctrl+ Nothing for the moment</span> Comming soon!</li>
+        </ul>
+      </div>
+      <div class="callout">
+        <p>Read our documentation for advanced keybindings and customization</p>
+        <a href="doc.html" class="button--primary">Documentation</a>
+      </div>
+    </div>
+    <div class="changelog">
+      <div class="wrapper">
+        <h3 class="section__title">Changelog</h3>
+        <div class="changelog__item">
+          <div class="changelog__meta">
+            <h4 class="changelog__title">v1.5</h4>
+            <small class="changelog__date">24/02/2021</small>
+          </div>
+          <div class="changelog__detail">
+            <ul>
+              <li>Improving the writing workflow with better key bindings</li>
+              <li>Design button updates</li>
+              <li>Switch script to cdn & package</li>
+              <li>Create cfh Doc</li>
+            </ul>
+          </div>
+        </div>
+        <div class="changelog__item">
+          <div class="changelog__meta">
+            <h4 class="changelog__title">v1.3</h4>
+            <small class="changelog__date">07/02/2021</small>
+          </div>
+          <div class="changelog__detail">
+            <ul>
+              <li>Adding md file to our script</li>
+              <li>Working with CDNs</li>
+              <li>Fresh Design</li>
+            </ul>
+          </div>
+        </div>
+        <div class="changelog__item">
+          <div class="changelog__meta">
+            <h4 class="changelog__title">v1.0</h4>
+            <small class="changelog__date">30/01/2021</small>
+          </div>
+          <div class="changelog__detail">
+            <ul>
+              <li>Save default md file in new folders</li>
+              <li>Working with APIs browser</li>
+            </ul>
+          </div>
+        </div>
+        <div class="changelog__callout">
+          <a href="./cfh.js" download="cfh" class="button--secondary">Download last version</a>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">Click for help is a free Support Script created by <span class="link--light">ACH-CHAK Yassir</span> FullStack web developer at <span class="terminote">AUTO HALL</span><!--<span class="email"> ayasseachchak@gmail.com</span>-->.</footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="scribbler.js"></script>
+  </body>
+</html>
