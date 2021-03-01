@@ -1,5 +1,4 @@
-# Click For Help Script
-
+# Click For Help Documentation
 **Version 1.5**
 
 This project was created with Javascript Pure Code & html2canvas & SMTP Protocol.
