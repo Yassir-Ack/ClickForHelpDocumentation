@@ -97,5 +97,20 @@ screenshotButton.onclick = () => {
   });
 }
 
+//+++++ Keybindings Part +++++
+
+//Togle display function
+const cfhDisplayToggle = () => {
+  //toggle button condition
+  screenshotButton.style.display == 'none' ? 
+  screenshotButton.style.display = '' : screenshotButton.style.display = 'none';
+}
+
+//Keyboard event (Ctrl + Alt + H)
+document.addEventListener('keydown', (event) => {
+    if (event.ctrlKey && event.altKey && (event.key === "h" || event.key === "H" )) {
+      cfhDisplayToggle();
+    }
+});
 
 
