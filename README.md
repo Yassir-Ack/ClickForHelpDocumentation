@@ -1,8 +1,8 @@
 # Click For Help Script
 
-**Version 1.5**
+**Version 1.0.0**
 
-This documentation was created with Javascript Pure Code and html & css.
+This documentation was created with Native Javascript and Html & Css.
 
 ## About Documentation
 
@@ -22,15 +22,13 @@ Just read the Doc and chilling!
 
 ## Contributors
 
-- ACHCHAK Yassir <ayasseachchak@gmail.com>
-
-- AutoHall Company <www.AutoHall.ma>
+- ACHCHAK Yassir <yassir.achchak.dev@gmail.com>
 
 ## Link
 
-`clickforhelp.netlify.app`
+`clickforhelp.js.org`
 
 ## Licence & Copyright
 
-© Achchak Yassir, FullStack Web Developer at AUTO HALL.
+© Achchak Yassir, FullStack Developer.
 
